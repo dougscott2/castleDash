@@ -14,7 +14,7 @@ mycastleStage.prototype = {
         this.enemies=[];
 
         if(this.levelName === "tutorial"){
-          
+
           var mv = game.add.sprite(300,1000,'moveControl');
           mv.animations.add('go',[0,0,1,0,0,2],5,true);
           mv.scale.setTo(2,2);
@@ -61,14 +61,14 @@ mycastleStage.prototype = {
         map.addTilesetImage('starryNight', 'sky');
 
 
-       layer = map.createLayer('backgroundSky');
-        if (layer!=null){
-          layer.resizeWorld();
-        }
-        layer = map.createLayer('backgroundStars');
-        if (layer!=null){
-          layer.resizeWorld();
-        }
+      //  layer = map.createLayer('backgroundSky');
+      //   if (layer!=null){
+      //     layer.resizeWorld();
+      //   }
+      //   layer = map.createLayer('backgroundStars');
+      //   if (layer!=null){
+      //     layer.resizeWorld();
+      //   }
 
         ground = map.createLayer('ground'); //creates layer called ground
         ground.resizeWorld();
@@ -77,10 +77,10 @@ mycastleStage.prototype = {
         this.tiles = game.physics.ninja.convertTilemap(map, ground, slopeMap);
 
 
-    layer = map.createLayer('background');
-    if (layer!=null){
-      layer.resizeWorld();
-    }
+    // layer = map.createLayer('background');
+    // if (layer!=null){
+    //   layer.resizeWorld();
+    // }
 
     playerLayer = map.createLayer('playerSpawn');
     if (playerLayer!=null){
@@ -127,10 +127,10 @@ mycastleStage.prototype = {
 
   },
   createFront: function() {
-    layer = map.createLayer('foreground'); //creates foreground layer to render after player is created so you can move behind objects
-    if (layer !=null){
-      layer.resizeWorld();
-    }
+    // layer = map.createLayer('foreground'); //creates foreground layer to render after player is created so you can move behind objects
+    // if (layer !=null){
+    //   layer.resizeWorld();
+    // }
   },
 
   update: function() {
