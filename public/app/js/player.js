@@ -207,13 +207,13 @@ castlePlayer.prototype = {
       if (player.body.touching.left){
         PLAYER_SPEED = 10;
         player.body.moveUp(450);
-        player.body.moveRight(PLAYER_SPEED);
+        player.body.moveRight(450);
         jumpSound.play();
       }
       if (player.body.touching.right){
         PLAYER_SPEED = 10;
         player.body.moveUp(450);
-        player.body.moveLeft(PLAYER_SPEED);
+        player.body.moveLeft(450);
         jumpSound.play();
       }
 
