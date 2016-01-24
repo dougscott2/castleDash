@@ -19,8 +19,8 @@ castlePlayer.prototype = {
         player.scale.setTo(0.8, 0.7);
         NinjaGame.game.physics.ninja.enableAABB(player);
         player.scale.setTo(1, 1);
-        player.body.bounce = 0.1;
-        player.body.friction = 0.25;
+        player.body.bounce = 0;
+        player.body.friction = 0.20;
         player.anchor.setTo(0.5, 0.65);
         player.body.collideWorldBounds = true;
         player.frame=5;
@@ -199,9 +199,21 @@ castlePlayer.prototype = {
     },
 
     jump: function() {
-      if(player.body.touching.down|| player.body.touching.left || player.body.touching.right){
+      if(player.body.touching.down){
         PLAYER_SPEED = 10;
         player.body.moveUp(450);
+        jumpSound.play();
+      }
+      if (player.body.touching.left){
+        PLAYER_SPEED = 10;
+        player.body.moveUp(450);
+        player.body.moveRight(PLAYER_SPEED);
+        jumpSound.play();
+      }
+      if (player.body.touching.right){
+        PLAYER_SPEED = 10;
+        player.body.moveUp(450);
+        player.body.moveLeft(PLAYER_SPEED);
         jumpSound.play();
       }
 
