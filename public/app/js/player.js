@@ -1,4 +1,4 @@
-var PLAYER_SPEED = 50;
+var PLAYER_SPEED = 70;
 var castlePlayer = function(){};
 var jumpSound;
 var walkSound;
@@ -19,8 +19,8 @@ castlePlayer.prototype = {
         player.scale.setTo(0.8, 0.7);
         NinjaGame.game.physics.ninja.enableAABB(player);
         player.scale.setTo(1, 1);
-        player.body.bounce = 0;
-        player.body.friction = 0.14;
+        player.body.bounce = 0.1;
+        player.body.friction = 0.25;
         player.anchor.setTo(0.5, 0.65);
         player.body.collideWorldBounds = true;
         player.frame=5;
@@ -199,7 +199,7 @@ castlePlayer.prototype = {
     },
 
     jump: function() {
-      if(player.body.touching.down){
+      if(player.body.touching.down|| player.body.touching.left || player.body.touching.right){
         PLAYER_SPEED = 10;
         player.body.moveUp(450);
         jumpSound.play();
